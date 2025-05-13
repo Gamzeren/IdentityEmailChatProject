@@ -1,0 +1,77 @@
+﻿@model IdentityEmailChatProject.Entities.Message
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Identity Email & Chat Uygulaması</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/quixlab-master/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="/quixlab-master/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="main-wrapper">
+        <div class="content-body">
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                   
+                </div>
+            </div>
+            <!-- row -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="email-left-box">
+                                    <a href="/Message/CreateMessage/" class="btn btn-primary btn-block">Yeni Mesaj Oluştur</a>
+                                    <div class="mail-list mt-4">
+                                        <a href="/Message/Inbox/" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i> <b>Gelen Mesaj</b> <span class="badge badge-primary badge-sm float-right m-t-5">6</span></a>
+                                        <a href="/Message/SendBox/" class="list-group-item border-0 p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Giden Mesaj<span class="badge badge-success badge-sm float-right m-t-5">5</span></a>
+                                        <a href="/Profile/ProfileDetail/" class="list-group-item border-0 p-r-0"><i class="fa fa-star-o font-18 align-middle mr-2"></i>Profilim <span class="badge badge-danger badge-sm float-right m-t-5">1</span> </a>
+                                        <a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-trash font-18 align-middle mr-2"></i>Çöp Kutusu</a>
+                                        <a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-sign-out font-18 align-middle mr-2"></i>Çıkış Yap</a>
+                                    </div>
+                                </div>
+                                <div class="email-right-box">
+                                    <div class="compose-content mt-5">
+                                        <form method="post">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg-transparent" placeholder=" Alıcı" asp-for="ReceiverEmail">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg-transparent" placeholder=" Konu" asp-for="Subject">
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="textarea_editor form-control bg-light" rows="15" placeholder="Mesajınız ..." asp-for="MessageDetail"></textarea>
+                                            </div>
+                                            @* <div class="text-left m-t-15"> *@
+                                                <button class="btn btn-primary">Gönder</button>
+                                            @* </div> *@
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+    </div>
+    <script src="/quixlab-master/plugins/common/common.min.js"></script>
+    <script src="/quixlab-master/js/custom.min.js"></script>
+    <script src="/quixlab-master/js/settings.js"></script>
+    <script src="/quixlab-master/js/gleek.js"></script>
+    <script src="/quixlab-master/js/styleSwitcher.js"></script>
+   
+</body>
+</html>

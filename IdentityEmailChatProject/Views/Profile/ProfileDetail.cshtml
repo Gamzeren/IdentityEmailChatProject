@@ -1,0 +1,124 @@
+﻿@model IdentityEmailChatProject.Entities.AppUser
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Identity Email & Chat Uygulaması</title>
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="/quixlab-master/images/favicon.png">
+	<!-- Custom Stylesheet -->
+	<link href="/quixlab-master/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="main-wrapper">
+		<div class="content-body">
+			<div class="row page-titles mx-0">
+				<div class="col p-md-0">
+				</div>
+			</div>
+			<!-- row -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="email-left-box">
+									<a href="/Message/CreateMessage/" class="btn btn-primary btn-block">Yeni Mesaj Oluştur</a>
+									<div class="mail-list mt-4">
+										<a href="/Message/Inbox/" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i> <b>Gelen Mesaj</b> <span class="badge badge-primary badge-sm float-right m-t-5">6</span> </a>
+										<a href="/Message/SendBox/" class="list-group-item border-0 p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Giden Mesaj<span class="badge badge-success badge-sm float-right m-t-5">5</span></a>
+										<a href="/Profile/ProfileDetail/" class="list-group-item border-0 p-r-0"><i class="fa fa-star-o font-18 align-middle mr-2"></i>Profilim <span class="badge badge-danger badge-sm float-right m-t-5">1</span> </a>
+										<a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-trash font-18 align-middle mr-2"></i>Çöp Kutusu</a>
+										<a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-sign-out font-18 align-middle mr-2"></i>Çıkış Yap</a>
+									</div>
+								</div>
+
+								<div class="content-body">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-lg-4 col-xl-6">
+												<div class="card">
+													<div class="card-body">
+														<div class="media align-items-center mb-4">
+															<img class="mr-3" src="@ViewBag.ProfilePicture" width="80" height="80" alt="">
+															<div class="media-body">
+																<h3 class="mb-0">@ViewBag.name  @ViewBag.surname</h3>
+																<p class="text-muted mb-0">@ViewBag.username</p>
+															</div>
+														</div>
+
+														<div class="row mb-5">
+															<div class="col">
+																<div class="card card-profile text-center">
+																	<span class="mb-1 text-primary"><i class="icon-people"></i></span>
+																	<h3 class="mb-0">@ViewBag.recipientEmailAddressCount</h3>
+																	<p class="text-muted px-4">Alınan Mesaj Sayısı</p>
+																</div>
+															</div>
+															<div class="col">
+																<div class="card card-profile text-center">
+																	<span class="mb-1 text-warning"><i class="icon-user-follow"></i></span>
+																	<h3 class="mb-0">@ViewBag.senderEmailAddressCount</h3>
+																	<p class="text-muted">Gönderilen Mesaj Sayısı</p>
+																</div>
+															</div>
+														</div>
+
+														<h4>İletişim Bilgileri</h4>
+														<ul class="card-profile__info">
+															<li><strong class="text-dark mr-4">Email:</strong> <span>@ViewBag.email</span></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-lg-6 col-xl-6">
+												<div class="card">
+													<h4 class="card-title">Profil Bilgilerini Güncelle</h4>
+													<div class="card-body">
+														<form method="post" action="/Profile/Edit">
+															<div class="form-group">
+																<input type="text" asp-for="ProfileImageUrl" class="form-control input-rounded" placeholder="Profil Resmi URL" />
+															</div>
+															<div class="form-group">
+																<input type="text" asp-for="Name" class="form-control input-rounded" placeholder="Ad" />
+															</div>
+															<div class="form-group">
+																<input type="text" asp-for="Surname" class="form-control input-rounded" placeholder="Soyad" />
+															</div>
+															<div class="form-group">
+																<input type="text" asp-for="UserName" class="form-control input-rounded" placeholder="Kullanıcı Adı" />
+															</div>
+															<div class="form-group">
+																<input type="email" asp-for="Email" class="form-control input-rounded" placeholder="E-posta" />
+															</div>
+															<div class="form-group">
+																<input type="password" asp-for=PasswordHash name="newPassword" class="form-control input-rounded" placeholder="Yeni Şifre" />
+															</div>
+															<button type="submit" class="btn btn-dark form-control input-rounded">Kaydet</button>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- #/ container -->
+				</div>
+			</div>
+			<script src="/quixlab-master/plugins/common/common.min.js"></script>
+			<script src="/quixlab-master/js/custom.min.js"></script>
+			<script src="/quixlab-master/js/settings.js"></script>
+			<script src="/quixlab-master/js/gleek.js"></script>
+			<script src="/quixlab-master/js/styleSwitcher.js"></script>
+</body>
+</html>
